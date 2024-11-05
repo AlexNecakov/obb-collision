@@ -1,4 +1,4 @@
-#include "oogabooga/oogabooga.c"
+#include "oogabooga/oogabooga/oogabooga.c"
 
 //: constants
 #define MAX_ENTITY_COUNT 4096
@@ -1267,7 +1267,9 @@ int entry(int argc, char **argv) {
         delta_t = now - last_time;
 // debug clamp dt for breakpoints
 #if CONFIGURATION == DEBUG
-        { clamp_top(delta_t, 0.017); }
+        {
+            clamp_top(delta_t, 0.017);
+        }
 #endif
 
         last_time = now;
