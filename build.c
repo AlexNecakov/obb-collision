@@ -1,10 +1,8 @@
-
-
 ///
 // Build config stuff
 
 // To enable extensions:
-// #define OOGABOOGA_ENABLE_EXTENSIONS   1
+#define OOGABOOGA_ENABLE_EXTENSIONS 1
 // #define OOGABOOGA_EXTENSION_PARTICLES 1
 
 #define INITIAL_PROGRAM_MEMORY_SIZE MB(5)
@@ -61,6 +59,3 @@ typedef struct Context_Extra {
 // #include "oogabooga/examples/particles_example.c" // Requires OOGABOOGA_EXTENSION_PARTICLES
 
 // #include "oogabooga/examples/sanity_tests.c"
-
-// This is where you swap in your own project!
-// #include "entry_yourepicgamename.c"
