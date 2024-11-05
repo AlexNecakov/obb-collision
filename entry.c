@@ -211,16 +211,16 @@ int collide(Arbiter *arb) {
     Matrix4 RotA = m4_rotate(matA, v3(0, 0, 1), arb->en_1->orientation);
     Matrix4 RotB = m4_rotate(matB, v3(0, 0, 1), arb->en_2->orientation);
 
-    Matrix4 RotAT = RotA.Transpose();
-    Matrix4 RotBT = RotB.Transpose();
+    Matrix4 RotAT = m4_transpose(RotA);
+    Matrix4 RotBT = m4_transpose(RotB);
 
-    Vector2 dp = posB - posA;
+    Vector2 dp = v2_sub(posB, posA);
     Vector2 dA = RotAT * dp;
     Vector2 dB = RotBT * dp;
 
     Matrix4 C = RotAT * RotB;
     Matrix4 absC = Abs(C);
-    Matrix4 absCT = absC.Transpose();
+    Matrix4 absCT = m4_transpose(absC);
 
     // Box A faces
     Vector2 faceA = Abs(dA) - hA - absC * hB;
